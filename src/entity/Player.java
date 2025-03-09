@@ -16,6 +16,8 @@ public class Player extends Entity{
     public final int screenX;
     public final int screenY;
 
+    int standCounter = 0;
+
     public Player(GamePanel gp, KeyHandler keyH){
 
         this.gp = gp;
@@ -100,6 +102,14 @@ public class Player extends Entity{
                 spriteCounter = 0;
             }
 
+        }
+        else {
+            standCounter++;
+
+            if (standCounter == 20){
+                spriteNum = 1;
+                standCounter = 0;
+            }
         }
 
     }
